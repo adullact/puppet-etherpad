@@ -313,22 +313,30 @@ see below.
 
 #### plugins_list
 
-Manage simple and advanced etherpad's plugins.
+Manage etherpad's plugins.
 
 |Type |Default |
 |-----|--------|
 |Hash[Pattern['ep_*'], Variant[Boolean, Undef]]|{}|
 
-You can install an advanced plugin with `true` value, a simple plugin with `undef` and unsintall it with `false`.
-You MUST use default plugin's names. They are findable here : https://static.etherpad.org/plugins.html
+Existing two kinds of plugins:
+ * Simple plugins : Supported plugins that does not modify `settings.json`.
+ * Advanced plugins : Supported plugins that accept configuration parameters in `settings.json`.
 
-Simple plugins : Don't need to add configuration lines in `settings.json`
-Advanced plugins : Need to add configuration lines in `settings.json`.
+Keys in `plugins_list` must be default plugins name.
+
+Values in `plugins_list` can be: 
+ * `undef`: Install any simple plugins or advanced plugins with its default configuration.
+ * `true` : Install advanced plugins with provided configuration by class attributs. See beelow detailed section about each plugin.
+ * `false`: Uninstall any plugins.
+
+List of all plugins is avalable at https://static.etherpad.org/plugins.html 
 
 |Plugin name |Supported |
 |--------------|----------|
 |`ep_button_link`|YES|
 |`ep_ldapauth`|YES|
+|`ep_mypads`|YES|
 |All simple plugins|YES|
 
 If the plugin is not supported, it will be installed but whitout configuration.
@@ -376,6 +384,11 @@ Manage the configuration of `ep_ldpauth`.
 |Type |Default |
 |-----|--------|
 |Type |'https://www.npmjs.com/package/ep_ldapauth' |
+
+#### mypads
+
+Manage the configuration of `ep_mypads`.
+
 
 #### pad_title
 
