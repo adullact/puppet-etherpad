@@ -336,6 +336,7 @@ List of all plugins is avalable at https://static.etherpad.org/plugins.html
 |--------------|----------|
 |`ep_button_link`|YES|
 |`ep_ldapauth`|YES|
+|`ep_mypads`|YES|
 |All simple plugins|YES|
 
 If the plugin is not supported, it will be installed but whitout configuration.
@@ -383,6 +384,10 @@ Manage the configuration of `ep_ldapauth`.
 |Type |Default |
 |-----|--------|
 |Type |'https://www.npmjs.com/package/ep_ldapauth' |
+
+#### mypads
+
+Manage the configuration of `ep_mypads`.
 
 #### pad_title
 
